@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 ImageIn AI
 
-## Getting Started
+**ImageIn AI** is an **AI-powered image editing tool** that enables users to **restore, edit, and modify logos** with advanced AI-driven features. It’s designed to help designers, businesses, and developers quickly enhance branding elements.
 
-First, run the development server:
+This project integrates **Next.js** for the frontend, **Clerk** for authentication, **Cloudinary AI** for image processing, **MongoDB** for database storage, and **Stripe** for handling payments.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## ✨ Features
+
+### 🔹 **AI-Powered Image Enhancements**
+
+- **Logo Image Restore** – Revive and enhance low-resolution or damaged logos.
+- **Logo Generative Fill** – Expand and complete logos using AI.
+- **Logo Object Remove** – Remove unwanted elements from logos seamlessly.
+- **Logo Object Recolor** – Modify logo colors dynamically with AI.
+- **Logo Background Remove** – Extract logos from backgrounds automatically.
+
+### 🔹 **User & Payment Features**
+
+- **Clerk Authentication** – Secure login & sign-up for users.
+- **Stripe Payments** – Users can buy credits for AI image processing.
+
+### 🔹 **Backend & Data Handling**
+
+- **MongoDB** – Stores user data, processed images, and purchase history.
+- **Cloudinary AI** – Handles AI-based image transformations & storage.
+
+---
+
+## 🚀 Installation & Setup
+
+### **1. Clone the Repository**
+
+```sh
+git clone https://github.com/yourusername/imagein-ai.git
+cd imagein-ai
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### **2. Install Dependencies**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### **3. Set Up Environment Variables**
 
-## Learn More
+Create a `.env.local` file and add the following:
 
-To learn more about Next.js, take a look at the following resources:
+```env
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+NEXT_PUBLIC_STRIPE_PUBLIC_KEY=your_stripe_public_key
+STRIPE_SECRET_KEY=your_stripe_secret_key
+MONGODB_URI=your_mongodb_connection_uri
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### **4. Run the Development Server**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```sh
+npm run dev
+```
 
-## Deploy on Vercel
+Your app will be available at **`http://localhost:3000`**.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🙌 Acknowledgments
+
+This project was inspired by **JavaScript Mastery**, which influenced its architecture and development.
+
+Special thanks to **Clerk, Cloudinary, Stripe, and MongoDB** for their powerful integrations.
