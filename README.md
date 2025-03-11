@@ -2,7 +2,7 @@
 
 **ImageIn AI** is an **AI-powered image editing tool** that enables users to **restore, edit, and modify logos** with advanced AI-driven features. It’s designed to help designers, businesses, and developers quickly enhance branding elements.
 
-This project integrates **Next.js** for the frontend, **Clerk** for authentication, **Cloudinary AI** for image processing, **MongoDB** for database storage, and **Stripe** for handling payments.
+This project integrates **Next.js** for the frontend, **Clerk** for authentication (with webhook support), **Cloudinary AI** for image processing, **MongoDB** for database storage, **Stripe** for handling payments and **Tailwind CSS** for styling.
 
 ---
 
