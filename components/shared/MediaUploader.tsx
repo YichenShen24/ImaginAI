@@ -2,6 +2,7 @@
 
 import { useToast } from "@/components/ui/use-toast";
 import { dataUrl, getImageSize } from "@/lib/utils";
+import { info, log } from "console";
 import { CldImage, CldUploadWidget } from "next-cloudinary";
 import { PlaceholderValue } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
@@ -31,7 +32,10 @@ const MediaUploader = ({
       height: result?.info?.height,
       secureURL: result?.info?.secure_url,
     }));
-
+    console.log("🆕 Updated Image State in setImage:", {
+      publicId: result.info.public_id,
+      secureURL: result.info.secure_url,
+    });
     onValueChange(result?.info?.public_id);
 
     toast({

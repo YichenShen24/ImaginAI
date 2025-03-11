@@ -39,6 +39,7 @@ import { getCldImageUrl } from "next-cloudinary";
 import { addImage, updateImage } from "@/lib/actions/image.actions";
 import { useRouter } from "next/navigation";
 import { InsufficientCreditsModal } from "./InsufficientCreditsModal";
+import { log } from "console";
 
 export const formSchema = z.object({
   title: z.string(),
@@ -86,7 +87,9 @@ const TransformationForm = ({
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
-
+    console.log("🟡 Submitting Form Values:", values);
+    console.log("🟡 Current Image Data Before Submit:", image);
+    // https://res.cloudinary.com/dxuuvfvuq/image/upload/v1741733943/griqhsoou5hd7lxpbyib.jpg"
     if (data || image) {
       const transformationUrl = getCldImageUrl({
         width: image?.width,
@@ -94,6 +97,8 @@ const TransformationForm = ({
         src: image?.publicId,
         ...transformationConfig,
       });
+
+      console.log("🟢 Generated Transformation URL:", transformationUrl);
 
       const imageData = {
         title: values.title,
@@ -108,6 +113,7 @@ const TransformationForm = ({
         prompt: values.prompt,
         color: values.color,
       };
+      console.log("🟢 Image Data to be Saved in DB:", imageData);
 
       if (action === "Add") {
         try {
